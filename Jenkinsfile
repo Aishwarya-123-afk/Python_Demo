@@ -13,7 +13,9 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                echo "done" 
+                git add .
+                git commit -m "updated checklists"
+                git push
             }
         }
     }
