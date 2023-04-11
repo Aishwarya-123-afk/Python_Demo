@@ -7,12 +7,12 @@ pipeline {
             }
         }
        
-        stage('push code') {
-            steps {
-               sh 'git add .'
-               sh 'git commit -m "update done"'
-               sh 'git push'
-            }
-        }
+//         stage('push code') {
+//             steps {
+//                sh 'git add .'
+//                sh 'git commit -m "update done"'
+//                sh 'git push'
+//             }
+//         }
     }
 }
