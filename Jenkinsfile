@@ -1,18 +1,10 @@
 pipeline {
     agent any
     stages {
-      stage('Run Python Script') {
+        stage('build') {
             steps {
-                sh 'python sample.py'
+                sh 'python --version'
             }
         }
-       
-//         stage('push code') {
-//             steps {
-//                sh 'git add .'
-//                sh 'git commit -m "update done"'
-//                sh 'git push'
-//             }
-//         }
     }
 }
