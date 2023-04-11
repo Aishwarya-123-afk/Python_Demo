@@ -1,15 +1,19 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage('build') {
+        stage('Build') { 
             steps {
-               git branch: 'main', url: 'https://github.com/Aishwarya-123-afk/Python_Demo.git'
+                 git branch: 'main', url: 'https://github.com/Aishwarya-123-afk/Python_Demo.git' 
             }
-        stage('run python script')
-            {
-                steps {
-               bat 'python sample.py'
-             }
+        }
+        stage('Test') { 
+            steps {
+                sh 'python sample.py' 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo "done" 
             }
         }
     }
