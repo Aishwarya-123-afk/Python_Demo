@@ -7,7 +7,10 @@ pipeline {
             }
         stage('run python script')
             {
+                steps
+                {
                 bat 'python sample.py'
+                }
             }
         }
     }
