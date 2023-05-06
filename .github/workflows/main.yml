@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: trigger single Job
-      run : echo '$(curl I -s -X POST -u Aishwarya:11b4d62fe39ef109b948419b82b1871494 http://192.168.1.6:8080/job/checklist/build)'
+      run : echo curl I -s -X POST -u Aishwarya:11b4d62fe39ef109b948419b82b1871494 http://192.168.1.6:8080/job/checklist/build
