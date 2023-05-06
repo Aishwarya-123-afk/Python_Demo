@@ -13,8 +13,8 @@ jobs:
     - name: trigger single Job
       uses: mickeygoussetorg/trigger-jenkins-job@v1
       with:
-          jenkins-server:  "http://192.168.1.6:8080" # URL of the jenkins server. ex: http://myjenkins.acme.com:8080
-          jenkins-job: "checklist" # The name of the jenkins job to run
-          jenkins-username: Aishwarya 
-          jenkins-pat: 11b4d62fe39ef109b948419b82b1871494 # personal Access token for accessing Jenkins
+          jenkins-server: "http://192.168.1.6:8080"
+          jenkins-job: "checklist"
+          jenkins-username: "Aishwarya" 
+          jenkins-pat: "11b4d62fe39ef109b948419b82b1871494" 
 #            
