@@ -16,6 +16,7 @@ jobs:
           -X POST \
           -H "Content-Type: application/json" \
           -H "Jenkins-Crumb: CRUMB" \
+          -H "Jenkins-Crumb: true" \
           http://192.168.1.6:8080/job/checklist/build
 #       run : curl I -s -X POST -u Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 http://192.168.1.6:8080/job/checklist/build
 #       env:
