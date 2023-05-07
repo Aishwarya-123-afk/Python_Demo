@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: trigger single Job
-#       run : python Test.py
+#       run : echo "Hello world"
 #       run: |
 #           curl -i --user Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 \
 #           -X POST \
