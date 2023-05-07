@@ -1,54 +1,24 @@
-
-name: run main.py
-
+name: Jenkins_trigger_build
 on:
   push:
     branches:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content
-
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10' # install the python version needed
-
-      - name: install python packages
-        run: |
-          python -m pip install --upgrade pip
-          #pip install -r requirements.txt
-
-      - name: execute py script # run main.py
-        run: sh 'python Test.py'
-
-# name: Jenkins_trigger_build
-# on:
-#   push:
-#     branches:
-#       - main
-#   pull_request:
-#     types: [opened, synchronize, reopened]
-# jobs:
-#   build:
-#     name: Build
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: trigger single Job
+    - name: trigger single Job
 #       run : python Test.py
-# #       run: |
-#           curl -i -u Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 \
+#       run: |
+#           curl -i --user Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 \
 #           -X POST \
 #           -H "Content-Type: application/json" \
 #           -H "Jenkins-Crumb: CRUMB" \
 #           -H "Jenkins-Crumb: true" \
 #           http://192.168.1.6:8080/job/checklist/build
-# #       run : curl I -s -X POST -u Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 http://192.168.1.6:8080/job/checklist/build
+      run : curl -i -X POST --user Aishwarya:11ffbd89d6a2b90e0abb9ecb0cf6d991f0 http://192.168.1.6:8080/job/checklist/build
 # #       env:
 # #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
