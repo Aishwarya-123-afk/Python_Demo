@@ -8,4 +8,4 @@ applications:
       - java_buildpack
     env:
       DATABASE_URL: jdbc:mysql://my-database-host/my_database
-      API_KEY: your_api_key
+      # API_KEY: your_api_key
