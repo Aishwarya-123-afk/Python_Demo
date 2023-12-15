@@ -1,14 +1,14 @@
-import subprocess
 
-jenkins_url = 'http://192.168.1.6:8080/job/checklist/build'
-username = 'Aishwarya'
-password = '11ffbd89d6a2b90e0abb9ecb0cf6d991f0'
-
-# Construct the curl command with username and password
-curl_command = ['curl', '-X', 'POST', jenkins_url, '--user', f'{username}:{password}']
-
-# # Construct the curl command
-# curl_command = ['curl', '-X', 'POST', jenkins_url]
-
-# Execute the curl command using subprocess
-subprocess.run(curl_command)
+name: Require Checklist 
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+  issues:
+    types: [opened, edited, deleted]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mheap/require-checklist-action@v2
+        with:
+          requireChecklist: false # If this is true and there are no checklists detected, the action will fail
